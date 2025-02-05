@@ -2,15 +2,29 @@
 A platform designed to match users looking for a +1 with others who are available to accompany them to events.
 
 ## Preview
-![landing page](assets/landing.png)
-![login page](assets/login.png)
-![profile setup page](assets/profile_setup.png)
-![events page](assets/events.png)
-![people page](assets/people.png)
-![reviews page](assets/reviews.png)
-![inbox page](assets/inbox.png)
-![profile page](assets/profile.png)
-![my event page](assets/my_event.png)
+<p float="left">
+  <img src="assets/landing.png" alt="landing page" width="45%" />
+  <img src="assets/login.png" alt="login page" width="45%" />
+</p>
+
+<p float="left">
+  <img src="assets/profile_setup.png" alt="profile setup page" width="45%" />
+  <img src="assets/events.png" alt="events page" width="45%" />
+</p>
+
+<p float="left">
+  <img src="assets/people.png" alt="people page" width="45%" />
+  <img src="assets/reviews.png" alt="reviews page" width="45%" />
+</p>
+
+<p float="left">
+  <img src="assets/inbox.png" alt="inbox page" width="45%" />
+  <img src="assets/profile.png" alt="profile page" width="45%" />
+</p>
+
+<p float="left">
+  <img src="assets/my_event.png" alt="my event page" width="45%" />
+</p>
 
 ## Getting Started (development)
 
