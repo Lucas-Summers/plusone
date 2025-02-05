@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                   Int           @id @default(autoincrement())
+  phone                String        @unique
+  firstName            String
+  lastName             String
+  password             String
+  event                Event[]       @relation("UserEvents")
+  invitesReceived      Invite[]      @relation("InviteUser")
+  invitesSent          Invite[]      @relation("InviteHost")
+  applicationsReceived Application[] @relation("AppliedUser")
+  applicationsSent     Application[] @relation("AppliedHost")
+  reviewsReceived      Review[]      @relation("ReviewUser")
+  reviewsSent          Review[]      @relation("ReviewHost")   
+  city                 String
+  state                String
+  premium              Boolean
+  sex                  Boolean
+  age                  Int
+  bio                  String
+  joinDate             DateTime
+  eventsAtt            Int
+  eventsCan            Int
+  socialMed            String?
+  banned               Boolean
+  rating               Float
+  @@map("User")
+}
+
+model Event {
+  id            Int           @id @default(autoincrement())
+  title         String
+  city          String
+  state         String
+  startDate     DateTime
+  dressCode     String
+  lookingFor    String
+  description   String
+  postDate      DateTime
+  hostId        Int           @unique
+  host          User          @relation("UserEvents", fields: [hostId], references: [id])
+  invites       Invite[]
+  applications  Application[]
+  reviews       Review[]
+  @@map("Event")
+}
+
+model Invite {
+  id          Int     @id @default(autoincrement())
+  status      Int
+  eventId     Int
+  event       Event   @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  recipientId Int
+  recipient   User    @relation("InviteUser", fields: [recipientId], references: [id])
+  senderId    Int
+  sender      User    @relation("InviteHost", fields: [senderId], references: [id])
+  @@map("Invite")
+}
+
+model Application {
+  id          Int     @id @default(autoincrement())
+  status      Int
+  eventId     Int
+  event       Event   @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  recipientId Int
+  recipient   User    @relation("AppliedUser", fields: [recipientId], references: [id])
+  senderId    Int
+  sender      User    @relation("AppliedHost", fields: [senderId], references: [id])
+  @@map("Application")
+}
+
+model Review {
+  id          Int     @id @default(autoincrement())
+  rating      Int
+  comment     String?
+  eventId     Int
+  event       Event   @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  recipientId Int
+  recipient   User    @relation("ReviewUser", fields: [recipientId], references: [id])
+  senderId    Int
+  sender      User    @relation("ReviewHost", fields: [senderId], references: [id])
+  @@map("Review")
+}
