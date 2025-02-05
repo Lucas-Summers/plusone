@@ -2,7 +2,7 @@
 A platform designed to match users looking for a +1 with others who are available to accompany them to events.
 
 ## Preview
-![preview](assets/preview.gif)
+![site preview](assets/preview.gif)
 
 ## Getting Started (devel)
 
