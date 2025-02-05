@@ -1,7 +1,18 @@
 # Plus+
 A platform designed to match users looking for a +1 with others who are available to accompany them to events.
 
-## Getting Started
+## Preview
+![landing page](assets/landing.png)
+![login page](assets/login.png)
+![profile setup page](assets/profile_setup.png)
+![events page](assets/events.png)
+![people page](assets/people.png)
+![reviews page](assets/reviews.png)
+![inbox page](assets/inbox.png)
+![profile page](assets/profile.png)
+![my event page](assets/my_event.png)
+
+## Getting Started (development)
 
 Frist, install all packages:
 ```bash
